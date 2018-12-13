@@ -6,7 +6,7 @@
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 11:21:19 by jkettani          #+#    #+#             */
-/*   Updated: 2018/12/13 09:48:55 by jkettani         ###   ########.fr       */
+/*   Updated: 2018/12/13 10:35:12 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "libft/libft.h"
+# include "libft.h"
 
 typedef struct		s_saved{
 	char			*saved_buf;

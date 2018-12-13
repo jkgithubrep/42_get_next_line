@@ -6,7 +6,7 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2018/12/09 16:42:46 by jkettani         ###   ########.fr        #
+#    Updated: 2018/12/13 10:34:48 by jkettani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME := libft.a
 FT := ft_
 SRC_PATH := .
-INCLUDE_PATH := .
+INCLUDE_PATH := includes
 OBJ_PATH := obj
 DEP_PATH := .deps
 RM := rm -rf
