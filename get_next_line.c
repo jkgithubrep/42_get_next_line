@@ -6,7 +6,7 @@
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 11:21:44 by jkettani          #+#    #+#             */
-/*   Updated: 2018/12/27 16:21:30 by jkettani         ###   ########.fr       */
+/*   Updated: 2018/12/27 17:43:12 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ static int		lst_del(t_saved **lst, int fd, int ret)
 {
 	t_saved		*next;
 	t_saved		*prev;
+	t_saved		*begin;
 	int			select;
 
 	next = NULL;
 	prev = NULL;
+	begin = *lst;
 	select = (fd == -1) ? -1 : fd;
 	while (lst && *lst)
 	{
@@ -35,6 +37,7 @@ static int		lst_del(t_saved **lst, int fd, int ret)
 			prev = *lst;
 		*lst = next;
 	}
+	*lst = begin;
 	return (ret);
 }
 
