@@ -6,7 +6,7 @@
 /*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 11:21:44 by jkettani          #+#    #+#             */
-/*   Updated: 2018/12/13 09:49:30 by jkettani         ###   ########.fr       */
+/*   Updated: 2018/12/27 16:21:30 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 static int		lst_del(t_saved **lst, int fd, int ret)
 {
-	t_saved		*tmp;
+	t_saved		*next;
+	t_saved		*prev;
 	int			select;
 
-	tmp = NULL;
+	next = NULL;
+	prev = NULL;
 	select = (fd == -1) ? -1 : fd;
 	while (lst && *lst)
 	{
-		tmp = (*lst)->next;
+		next = (*lst)->next;
 		if (select == -1 || (*lst)->fd == select)
 		{
+			if (prev)
+				prev->next = next;
 			free((*lst)->saved_buf);
 			free(*lst);
 		}
-		*lst = tmp;
+		else
+			prev = *lst;
+		*lst = next;
 	}
 	return (ret);
 }
